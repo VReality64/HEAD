@@ -1,191 +1,149 @@
 # HEAD
 
-A list of everything that could go in the `<head>` of your document
+HTML head 태그 모음 (특별히 meta 태그!)
 
-## Table of Contents
+## 내용
 
-- [Recommended Minimum](#recommended-minimum)
-- [Elements](#elements)
-- [Meta Elements](#meta-elements)
-  - [Meta Elements: Not Recommended](#meta-elements-not-recommended)
-- [Link Elements](#link-elements)
-  - [Link Elements: Not Recommended](#link-elements-not-recommended)
-  - [Favicons](#favicons)
-- [Social](#social)
-  - [Facebook / Open Graph](#facebook--open-graph)
-  - [Facebook / Instant Articles](#facebook--instant-articles)
-  - [Twitter](#twitter)
+- [최소 권장사항](#최소-권장사항)
+- [태그들](#태그들)
+- [메타 태그들](#메타-태그들)
+  - [사용하지 않기를 권고하는 메타 태그들](#사용하지-않기를-권고하는-메타-태그들)
+- [링크 태그들](#링크-태그들)
+  - [사용하지 않기를 권고하는 링크 태그들](#사용하지-않기를-권고하는-링크-태그들)
+  - [파비콘](#파비콘)
+- [소셜](#소셜)
+  - [페이스북 / 오픈 그래프](#페이스북---오픈-그래프)
+  - [페이스북 / 인스턴트 아티클](#페이스북--인스턴트-아티클)
+  - [트위터](#트위터)
   - [Google+ / Schema.org](#google--schemaorg)
   - [OEmbed](#oembed)
-- [Browser / Platform](#browser--platform)
-  - [Apple iOS](#apple-ios)
-  - [Apple Safari](#apple-safari)
-  - [Google Android](#google-android)
-  - [Google Chrome](#google-chrome)
-  - [Microsoft Internet Explorer](#microsoft-internet-explorer)
-  - [Microsoft Internet Explorer: Legacy, Do Not Use!](#microsoft-internet-explorer-legacy-do-not-use)
-  - [360 Browser](#360-browser)
-  - [UC Mobile Browser](#uc-mobile-browser)
-  - [QQ Mobile Browser](#qq-mobile-browser)
-- [App Links](#app-links)
-- [Notes](#notes)
-  - [Performance](#performance)
-- [Other Resources](#other-resources)
-- [Related Projects](#related-projects)
-- [Contributing](#contributing)
+- [브라우저 / 플랫폼](#브라우저--플랫폼)
+  - [애플 iOS](#애플-ios)
+  - [애플 사파리](#애플-사파리)
+  - [구글 안드로이드](#구글-안드로이드)
+  - [구글 크롬](#구글-크롬)
+  - [인터넷 익스플로러](#인터넷-익스플로러)
+  - [인터넷 익스플로러 (사용하면 안되는 레거시들)](#인터넷-익스플로러-사용하면-안되는-레거시들)
+  - [360 브라우저](#360-브라우저)
+  - [UC 모바일 브라우저](#uc-모바일-브라우저)
+  - [QQ 모바일 브라우저](#qq-모바일-브라우저)
+- [앱 링크](#앱-링크)
+- [알림](#알림)
+  - [성능](#성능)
+- [다른 자원들](#다른-자원들)
+- [관련 프로젝트들](#관련-프로젝트들)
+- [기여](#기여)
 
-## Recommended Minimum
+## 최소 권장사항
 
-Below are the essential tags for basic, minimalist websites:
+웹사이트가 기본적으로 반드시 가져야 할 태그들
 
 ```html
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>Page Title</title>
 ```
 
-## Elements
+## 태그들
 
 ``` html
-<!-- Document Title -->
-<title>Page Title</title>
+<!-- 문서 제목 -->
+<title>페이지 제목</title>
 
-<!-- Base URL to use for all relative URLs contained within the document -->
+<!-- 문서내에 있는 상대 주소의 루트가 될 Base 주소 -->
 <base href="https://example.com/page.html">
 
-<!-- External CSS -->
+<!-- 외부 CSS 파일 -->
 <link rel="stylesheet" href="styles.css">
 
-<!-- In-document CSS -->
+<!-- 인라인 CSS -->
 <style>
   /* ... */
 </style>
 
-<!-- JavaScript -->
+<!-- 자바스크립트 -->
 <script src="script.js"></script>
 ```
 
-## Meta Elements
+## 메타 태그들
 
 ``` html
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-<!-- Name of web application (only should be used if the website is used as an app) -->
-<meta name="application-name" content="Application Name">
-
-<!-- Short 3 or 4 sentence description of website: included in search engine results -->
-<meta name="description" content="150 chars">
-
-<!-- Short description of your sites subject -->
-<meta name="subject" content="your website's subject">
-
-<!-- Controls what pages crawlers are allowed to index on your site -->
+<!-- 위의 3개 태그는 *반드시* head의 첫번째에 와야함. 다른 head 태그들은 반드시 이 태그들 *이후에* 와야한다.  -->
+<meta name="application-name" content="Application 이름">
+<meta name="description" content="150자 이내의 페이지 설명">
+<meta name="subject" content="웹사이트 주제">
 <meta name="robots" content="index,follow,noodp">
-
-<!-- Works the same as the robots meta tag, but exclusively for Google -->
 <meta name="googlebot" content="index,follow">
-
-<!-- Tells the Google search engine to not show the sitelinks search box -->
 <meta name="google" content="nositelinkssearchbox">
-
-<!-- Verifies ownership of the Search Console for Google -->
 <meta name="google-site-verification" content="verification_token">
-
-<!-- Used to name software used to build the website (i.e. - Wordpress, Dreamweaver) -->
 <meta name="generator" content="program">
-
-<!-- Very short sentence describing the purpose of the website -->
 <meta name="abstract" content="">
-
-<!-- Describes the topic of the website -->
 <meta name="topic" content="">
-
-<!-- Brief summary of the company or purpose of the website -->
 <meta name="summary" content="">
-
-<!-- A deprecated tag that does the same as the keywords meta tag -->
 <meta name="classification" content="business">
-
-<!-- Full domain name or web address -->
 <meta name="url" content="https://example.com/">
-
-<!-- Does the same as URL, older and not supported -->
 <meta name="identifier-URL" content="https://example.com/">
-
-
 <meta name="directory" content="submission">
-
-<!-- Does the same function as the keywords tag -->
 <meta name="category" content="">
-
-<!-- Makes sure your website shows up in all countries and languages -->
 <meta name="coverage" content="Worldwide">
-
-<!-- Does the same as the coverage tag -->
 <meta name="distribution" content="Global">
-
-<!-- Gives a general age rating based on sites content -->
 <meta name="rating" content="General">
-
-<!-- Allows control over how referrer information is passed -->
 <meta name="referrer" content="never">
-
-<!-- Allows control over where resources are loaded from -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
 
-<!-- Disable automatic detection and formatting of possible phone numbers -->
+<!-- 핸드폰 번호 자동 감지 및 포매팅 기능 해제  -->
 <meta name="format-detection" content="telephone=no">
 
-<!-- Geo tags -->
-<meta name="ICBM" content="latitude, longitude">
-<meta name="geo.position" content="latitude;longitude">
-<meta name="geo.region" content="country[-state]"><!-- Country code (ISO 3166-1): mandatory, state code (ISO 3166-2): optional; eg. content="US" / content="US-NY" -->
-<meta name="geo.placename" content="city/town"><!-- eg. content="New York City" -->
+<!-- 위치 정보 태그 -->
+<meta name="ICBM" content="latitude, longitude" />
+<meta name="geo.position" content="latitude;longitude" />
+<meta name="geo.region" content="country[-state]" /><!-- 국가 코드 (ISO 3166-1): 필수, 주(state) 코드 (ISO 3166-2): 선택; eg. content="US" / content="US-NY" -->
+<meta name="geo.placename" content="city/town" /><!-- eg. content="New York City" -->
 ```
 
 - [ICBM on Wikipedia](https://en.wikipedia.org/wiki/ICBM_address#Modern_use)
 - [Geotagging on Wikipedia](https://en.wikipedia.org/wiki/Geotagging#HTML_pages)
 
-### Meta Elements: Not Recommended
-Below are the meta attributes which are not recommended for use:
+### 사용하지 않기를 권고하는 메타 태그들
+아래 메타 태그들은 사용하지 맙시다.
 
 ```html
-<!-- Used to declare the document language, but not well supported. Better to use <html lang=""> -->
+<!-- 문서에서 사용하는 언어를 명시하지만 잘 지원이 안됩니다. 그러니 <html lang=""> 형태로 사용합시다. -->
 <meta name="language" content="en">
 
-<!-- Google disregards & Bing considers it an indicator of spam -->
+<!-- 구글하고 빙은 이 태그를 스팸으로 간주한답니다. -->
 <meta name="keywords" content="your,keywords,here,comma,separated,no,spaces">
 
-<!-- No evidence of current use in any search engines -->
+<!-- 현재 어떤 검색엔진에서도 이 태그를 사용한다는 정보가 없습니다. -->
 <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm">
 
-<!-- Provides an easy way for spam bots to harvest email addresses -->
+<!-- to 스팸 봇: 내 멜 주소를 가져가서 스팸에 쓰세요. 읭??? -->
 <meta name="reply-to" content="email@example.com">
 
-<!-- Better to use <link rel="author"> or humans.txt file -->
+<!-- <link rel="author"> 형태나 humans.txt 파일 형태로 사용합시다. -->
 <meta name="author" content="name, email@example.com">
 <meta name="designer" content="">
 <meta name="owner" content="">
 
-<!-- Tells search bots to revisit the page after a period. This is not supported because most Search Engines now use random intervals for re-crawling a webpage -->
+<!-- to 검색 봇: 특정 기간 이후에 우리 페이지 다시 방문해줘. -->
+<!-- RE: 싫어요~ 언제 방문할지는 제 맘입니다~ 랜덤이죠! -->
 <meta name="revisit-after" content="7 days">
 
-<!-- Google strongly advises not to use this. Better to set up server-side (e.g. Apache, nginx) redirects instead -->
+<!-- 구글이 이거 쓰지 말라고 아주 강하게 권고하네요. 서버측에서 redirect 설정합시다. -->
 <meta http-equiv="refresh" content="300;url=https://example.com/">
 
-<!-- Cache Control -->
-<!-- Better to configure cache control server side -->
+<!-- 캐시 제어 -->
+<!-- 서버측에서 설정합시다 :) -->
 <meta http-equiv="Expires" content="0">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
 ```
 
-## Link Elements
+## 링크 태그들
 
 ``` html
 <link rel="copyright" href="copyright.html">
@@ -223,37 +181,36 @@ Below are the meta attributes which are not recommended for use:
 <link rel="prerender" href="https://example.com/">
 <link rel="subresource" href="styles.css">
 <link rel="preload" href="image.png">
-<!-- More info: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
 ```
 
-### Link Elements: Not Recommended
-Below are the link relations which are not recommended for use:
+- [Prefetching, Preloading, Prebrowsing](https://css-tricks.com/prefetching-preloading-prebrowsing)
+
+### 사용하지 않기를 권고하는 링크 태그들
+아래 링크 태그들은 사용하지 맙시다.
 
 ```html
 <link rel="shortcut icon" href="path/to/favicon.ico">
 ```
 
-### Favicons
+### 파비콘
 
 ``` html
-<!-- For IE 10 and below -->
-<!-- No link, just place a file called favicon.ico in the root directory -->
+<!-- IE 10 이하 버전에서는 -->
+<!-- 링크 제공하지 말고 favicon.ico 파일을 루트 폴더에 둡시다. -->
 
-<!-- For IE 11, Chrome, Firefox, Safari, Opera -->
+<!-- IE 11, Chrome, Firefox, Safari, Opera -->
 <link rel="icon" href="path/to/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="path/to/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="path/to/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="path/to/favicon-62.png" sizes="62x62" type="image/png">
 <link rel="icon" href="path/to/favicon-192.png" sizes="192x192" type="image/png">
-<!-- More info: https://bitsofco.de/all-about-favicons-and-touch-icons/ -->
 ```
 
 - [All About Favicons (And Touch Icons)](https://bitsofco.de/all-about-favicons-and-touch-icons/)
-- [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
 
-## Social
+## 소셜
 
-### Facebook / Open Graph
+### 페이스북 / 오픈 그래프
 
 ``` html
 <meta property="fb:app_id" content="123456789">
@@ -265,30 +222,29 @@ Below are the link relations which are not recommended for use:
 <meta property="og:site_name" content="Site Name">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="">
-<!-- Facebook: https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<!-- Open Graph: http://ogp.me/ -->
 ```
 
 - [Facebook Open Graph Markup](https://developers.facebook.com/docs/sharing/webmasters#markup)
 - [Open Graph protocol](http://ogp.me/)
 
-### Facebook / Instant Articles
+### 페이스북 / 인스턴트 아티클
 
 ``` html
 <meta charset="utf-8">
 <meta property="op:markup_version" content="v1.0">
 
-<!-- The URL of the web version of your article -->
+<!-- 아티클은 페이스북의 인스턴트 아티클을 말함 -->
+<!-- 아티클의 웹 버전 주소 -->
 <link rel="canonical" href="http://example.com/article.html">
 
-<!-- The style to be used for this article -->
+<!-- 아티클에 사용된 스타일 -->
 <meta property="fb:article_style" content="myarticlestyle">
 ```
 
 - [Facebook Instant Articles: Creating Articles](https://developers.facebook.com/docs/instant-articles/guides/articlecreate)
 - [Instant Articles: Format Reference](https://developers.facebook.com/docs/instant-articles/reference)
 
-### Twitter
+### 트위터
 
 ``` html
 <meta name="twitter:card" content="summary">
@@ -298,8 +254,6 @@ Below are the link relations which are not recommended for use:
 <meta name="twitter:title" content="Content Title">
 <meta name="twitter:description" content="Content description less than 200 characters">
 <meta name="twitter:image" content="https://example.com/image.jpg">
-<!-- More info: https://dev.twitter.com/cards/getting-started -->
-<!-- Validate: https://dev.twitter.com/docs/cards/validation/validator -->
 ```
 
 - [Twitter Cards: Getting Started Guide](https://dev.twitter.com/cards/getting-started)
@@ -327,74 +281,73 @@ Below are the link relations which are not recommended for use:
 
 - [oEmbed format](http://oembed.com/)
 
-## Browser / Platform
+## 브라우저 / 플랫폼
 
 
-### Apple iOS
+### 애플 iOS
 
 ``` html
-<!-- Smart App Banner -->
+<!-- 스마트 앱 배너 -->
 <meta name="apple-itunes-app" content="app-id=APP_ID,affiliate-data=AFFILIATE_ID,app-argument=SOME_TEXT">
 
-<!-- Disable automatic detection and formatting of possible phone numbers -->
+<!-- 핸드폰 번호 자동 감지 및 포매팅 기능 해제  -->
 <meta name="format-detection" content="telephone=no">
 
-<!-- Add to Home Screen -->
+<!-- 홈 스크린에 추가 -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="App Title">
 
-<!-- Touch Icons -->
+<!-- 터치 아이콘 -->
 <link rel="apple-touch-icon" href="path/to/apple-touch-icon.png">
 <link rel="apple-touch-icon-precomposed" href="path/to/apple-touch-icon-precomposed.png">
-<!-- In most cases, one 180×180px touch icon in the head is enough -->
-<!-- If you use art-direction and/or want to have different content for each device, you can add more touch icons -->
+<!-- 대부분의 경우, head 안에 180x180px 크기의 아이콘 한개면 충분하다. -->
+<!-- 만약 art-direction을 사용하거나 기기별로 다른 콘텐츠를 보여주고 싶다면, 아이콘을 여러개 추가하면 된다 -->
 
-<!-- Startup Image -->
+<!-- 시작(start-up) 이미지 -->
 <link rel="apple-touch-startup-image" href="path/to/startup.png">
-
-<!-- More info: https://developer.apple.com/safari/library/documentation/appleapplications/reference/safarihtmlref/articles/metatags.html -->
 ```
 
 - [Apple Meta Tags](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 
-### Apple Safari
+### 애플 사파리
 
 ```html
-<!-- Pinned Site -->
+<!-- 핀 표시한 사이트 (pinned site) -->
 <link rel="mask-icon" href="path/to/icon.svg" color="red">
 ```
 
-### Google Android
+### 구글 안드로이드
 
 ``` html
 <meta name="theme-color" content="#E64545">
 
-<!-- Add to homescreen -->
+<!-- 홈 스크린에 추가 -->
 <meta name="mobile-web-app-capable" content="yes">
-<!-- More info: https://developer.chrome.com/multidevice/android/installtohomescreen -->
 ```
 
-### Google Chrome
+- [Install to Home Screen](https://developer.chrome.com/multidevice/android/installtohomescreen)
+
+### 구글 크롬
 
 ``` html
 <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/APP_ID">
 
-<!-- Disable translation prompt -->
+<!-- 번역 기능 해제 -->
 <meta name="google" value="notranslate">
 ```
 
-### Microsoft Internet Explorer
+### 인터넷 익스플로러
 
 ``` html
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="cleartype" content="on">
 <meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
 
-<!-- Disable link highlighting on IE 10 on Windows Phone (https://blogs.windows.com/buildingapps/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10/) -->
+<!-- 윈도우 폰 내 IE 10 링크 하이라이팅 기능 해제 -->
 <meta name="msapplication-tap-highlight" content="no">
 
-<!-- Pinned sites (https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) -->
+<!-- 핀 표시한 사이트 -->
 <meta name="application-name" content="Contoso Pinned Site Caption">
 <meta name="msapplication-tooltip" content="Example Tooltip Text">
 <meta name="msapplication-starturl" content="/">
@@ -417,7 +370,9 @@ Below are the link relations which are not recommended for use:
 <meta name="msapplication-window" content="width=1024;height=768">
 ```
 
-### Microsoft Internet Explorer: Legacy, Do Not Use!
+- [Adapting your webkit optimized site for IE 10](https://blogs.windows.com/buildingapps/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10/)
+
+### 인터넷 익스플로러 (사용하면 안되는 레거시들)
 
 ``` html
 <!-- Disable the image toolbar when you mouse over images in IE 6 (https://msdn.microsoft.com/en-us/library/ms532986(v=vs.85).aspx) -->
@@ -436,27 +391,27 @@ Below are the link relations which are not recommended for use:
 <meta http-equiv="Site-Exit" content="revealtrans(duration=3,transition=12)">
 ```
 
-### 360 Browser
+### 360 브라우저
 
 ``` html
-<!-- select rendering engine in order -->
+<!-- 렌더링 엔진 순서대로 표시 -->
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 ```
 
-### UC Mobile Browser
+### UC 모바일 브라우저
 
 ``` html
-<!-- Locks the screen into the specified orientation -->
+<!-- 특정 방향으로 스크린 잠금 -->
 <meta name="screen-orientation" content="landscape/portrait">
-<!-- Display this page in fullscreen -->
+<!-- 이 페이지 풀스크린으로 표시 -->
 <meta name="full-screen" content="yes">
-<!-- UC browser will display images even if in "text mode" -->
+<!-- "text mode"여도 이미지 표시 강제 -->
 <meta name="imagemode" content="force">
-<!-- Page will be displayed in "application mode"(fullscreen,forbiding gesture, etc.) -->
+<!-- 페이지를 "application mode"로 실행 (풀스크린,제스처 금지, etc.) -->
 <meta name="browsermode" content="application">
-<!-- Disabled the UC browser's "night mode" in this page -->
+<!-- 페이지를 "night mode"로 실행 제한 -->
 <meta name="nightmode" content="disable">
-<!-- Simplify the page to reduce data transfer -->
+<!-- 데이터 소모를 줄이기 위해 페이지 Simplify -->
 <meta name="layoutmode" content="fitscreen">
 <!-- Disable the UC browser's feature of "scaling font up when there are many words in this page" -->
 <meta name="wap-font-scale" content="no">
@@ -464,78 +419,77 @@ Below are the link relations which are not recommended for use:
 
 - [UC Browser Docs](http://www.uc.cn/download/UCBrowser_U3_API.doc)
 
-### QQ Mobile Browser
+### QQ 모바일 브라우저
 
 ``` html
-<!-- Locks the screen into the specified orientation -->
+<!-- 특정 방향으로 스크린 잠금 -->
 <meta name="x5-orientation" content="landscape/portrait">
-<!-- Display this page in fullscreen -->
+<!-- 이 페이지 풀스크린으로 표시 -->
 <meta name="x5-fullscreen" content="true">
-<!-- Page will be displayed in "application mode"(fullscreen,etc.) -->
+<!-- 페이지를 "application mode"로 실행 (풀스크린, etc.) -->
 <meta name="x5-page-mode" content="app">
 ```
 
-## App Links
+## 앱 링크
 
 ``` html
 <!-- iOS -->
 <meta property="al:ios:url" content="applinks://docs">
 <meta property="al:ios:app_store_id" content="12345">
 <meta property="al:ios:app_name" content="App Links">
-<!-- Android -->
+<!-- 안드로이드 -->
 <meta property="al:android:url" content="applinks://docs">
 <meta property="al:android:app_name" content="App Links">
 <meta property="al:android:package" content="org.applinks">
-<!-- Web Fallback -->
+<!-- 웹 Fallback -->
 <meta property="al:web:url" content="http://applinks.org/documentation">
-<!-- More info: http://applinks.org/documentation/ -->
 ```
 
 - [App Links Docs](http://applinks.org/documentation/)
 
-## Notes
+## 알림
 
-### Performance
-Moving the `href` attribute to the beginning of an element improves compression when GZIP is enabled, because the `href` attribute is used in `a`, `base` and `link` tags.
+### 성능
+`href` 속성을 태그의 첫번째 속성으로 지정하면 GZIP 기능을 사용할 때 압축 성능이 향상 된다. 왜냐하면 `href` 속성은 `a`, `base`, `link` 태그에서 사용되기 때문이다.
 
 Example:
-``` html
+```
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 ```
 
-## Other Resources
+## 다른 자원들
 
 - [HTML5 Boilerplate Docs: The HTML](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md)
 - [HTML5 Boilerplate Docs: Extend and customize](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md)
 
-## Related Projects
+## 관련 프로젝트들
 
-- [html-head-snippets](https://github.com/joshbuchea/atom-html-head-snippets) - Atom package for `HEAD` snippets
-- [head-it](https://github.com/hemanth/head-it) - CLI interface for `HEAD` snippets
+- [html-head-snippets](https://github.com/joshbuchea/atom-html-head-snippets) - `HEAD` 스니핏을 위한 아톰 패키지
+- [head-it](https://github.com/hemanth/head-it) - `HEAD` 스니핏을 위한 CLI 인터페이스
 
-## Translations
+## 번역
 
-- [Japanese](http://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
+- [일본어](http://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
 
-## Contributing
+## 기여
 
-Open an issue or a pull request to suggest changes or additions.
+수정이나 추가를 제안하고 싶으면 이슈나 풀리퀘를 해주세요.
 
-Please follow these steps for pull requests:
-- Modify only one tag, or one related set of tags at a time
-- Use double quotes on attributes
-- Don't include a trailing slash in self-closing elements — the HTML5 spec says they're optional
-- Consider including a link to documentation that supports your change
+풀리퀘는 다음 순서대로 해주세요:
+ - 하나의 태그나 관련된 태그 내용을 한번에 수정해주세요
+ - 속성은 쌍따옴표로 감싸주세요
+ - 스스로 닫는 태그는 문장 마지막에 슬래시는 사용하지 말아주세요. HTML5 스펙에 해당 사항은 선택이라고 나와있어요.
+ - 수정한 내용에 대해서는 문서를 포함하는 걸 고려해주세요.
 
-### Contributors
+## 기여자들
 
-Check out all the super awesome [contributors](https://github.com/joshbuchea/HEAD/graphs/contributors).
+[우리 짱 멋진 기여자들을 확인해보세요](https://github.com/joshbuchea/HEAD/graphs/contributors).
 
-## Author
+## 저자
 
 **[Josh Buchea](http://joshbuchea.com/)**
 
-## License
+## 라이센스
 
 [CC0 License](LICENSE)
 
